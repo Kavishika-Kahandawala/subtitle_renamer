@@ -132,7 +132,7 @@ match method_position:
                 "Not ideal to continue. But wanna give it a go?\n if all video files are there, then doing this is fine"
             )
         elif len_sub < len_vid:
-            console.print(f"There are {len_vid-len_sub} more video files than subtitle files")
+            console.print(f"There are {len_vid-len_sub} more subtitle files than video files")
             m1_confirm = confirm(
                 "Not ideal to continue. But wanna give it a go?\n if all subtitle files are there, then doing this is fine"
             )
