@@ -127,12 +127,12 @@ match method_position:
         len_vid = len(video_files)
         m1_confirm = True
         if len_sub > len_vid:
-            console.print(f"There's {len_sub-len_vid} more video files")
+            console.print(f"There are {len_sub-len_vid} more video files than subtitle files")
             m1_confirm = confirm(
                 "Not ideal to continue. But wanna give it a go?\n if all video files are there, then doing this is fine"
             )
         elif len_sub < len_vid:
-            console.print(f"There's {len_sub} more than subtitle files")
+            console.print(f"There are {len_vid-len_sub} more video files than subtitle files")
             m1_confirm = confirm(
                 "Not ideal to continue. But wanna give it a go?\n if all subtitle files are there, then doing this is fine"
             )
