@@ -234,8 +234,13 @@ match method_position:
             spinner.stop()
     case 2:
 
+        console.print("\nLet's sort subtitle files first :)\n")
+        sub_ext = get_extension(sub_ext_list, sub_ext_q)
+        sub_files = filter_ext(files, sub_ext)
+        sub_files = sort_questions(sub_files)
+
         rename_str = input(
-            "Please enter the filename you need to rename with { n } tag to show the EP number )\nex: TV_series_Name{n}ep_name:"
+            "Please enter the filename you need to rename with {n} tag to show the EP number )\nex: TV_series_Name{n}ep_name:"
         )
 
         rename_split = rename_str.split("{n}")
@@ -243,31 +248,97 @@ match method_position:
             "Sample name: " + rename_split[0] + "01" + rename_split[1] + "." + sub_ext
         )
 
-        while "y" != input("is this correct ? : ").lower():
-            rename_split = input(
-                "Please enter the filename you need to rename with { n } tag to show the EP number )\nex: TV_series_Name{n}ep_name: "
+        while not confirm("is this correct ? : "):
+            rename_str = input(
+                "Please enter the filename you need to rename with {n} tag to show the EP number )\nex: TV_series_Name{n}ep_name: "
             )
             rename_split = rename_str.split("{n}")
             print("Sample name:" + rename_split[0] + "01" + rename_split[1])
 
         start_ep = input("Enter the first ep number: ")
 
+        console.print("Pick what to do :)")
+        arg = select(dest_arg, cursor="🢧", cursor_style="cyan")
+        arg_bool = arg == dest_arg[0]
         spinner.start()
-        num_zeros = (len(start_ep) - len(start_ep.lstrip("0"))) + 1
+
+        ep_len = len(start_ep)
         count = int(start_ep)
-        zero_arg=True
-        for file in files:
-            if zero_arg:
-                ep_num = "0" * num_zeros + str(count)
+        formatted_Folder_create(file_path)
+        for file in sub_files:
             current_file_path = os.path.join(file_path, file)
-            new_file_name = rename_split[0] + ep_num + rename_split[1] + "." + sub_ext
-            new_file_path = os.path.join(new_formatted, new_file_name)
-            shutil.copy2(current_file_path, new_file_path)
+            new_file_name = (
+                rename_split[0]
+                + (str(count).zfill(ep_len))
+                + rename_split[1]
+                + "."
+                + sub_ext
+            )
+            new_file_path = os.path.join(file_path, new_file_name)
+            if arg_bool:
+                new_file_path = os.path.join(file_path, f"{new_file_name}")
+                os.rename(current_file_path, new_file_path)
+            else:
+                new_file_path = os.path.join(
+                    file_path, "Formatted", f"{new_file_name}"
+                )
+                shutil.copy2(current_file_path, new_file_path)
             count += 1
 
         spinner.stop()
     case 3:
-        pass
+        console.print("\nLet's sort videos files first :)\n")
+        vid_ext = get_extension(video_ext_list, video_ext_q)
+        vid_files = filter_ext(files, vid_ext)
+        vid_files = sort_questions(vid_files)
+
+        rename_str = input(
+            "Please enter the filename you need to rename with {n} tag to show the EP number )\nex: TV_series_Name{n}ep_name:"
+        )
+
+        rename_split = rename_str.split("{n}")
+        print(
+            "Sample name: " + rename_split[0] + "01" + rename_split[1] + "." + vid_ext
+        )
+
+        while not confirm("is this correct ? : "):
+            rename_str = input(
+                "Please enter the filename you need to rename with {n} tag to show the EP number )\nex: TV_series_Name{n}ep_name: "
+            )
+            rename_split = rename_str.split("{n}")
+            print("Sample name:" + rename_split[0] + "01" + rename_split[1])
+
+        start_ep = input("Enter the first ep number: ")
+
+        console.print("Pick what to do :)")
+        arg = select(dest_arg, cursor="🢧", cursor_style="cyan")
+        arg_bool = arg == dest_arg[0]
+        spinner.start()
+
+        ep_len = len(start_ep)
+        count = int(start_ep)
+        formatted_Folder_create(file_path)
+        for file in vid_files:
+            current_file_path = os.path.join(file_path, file)
+            new_file_name = (
+                rename_split[0]
+                + (str(count).zfill(ep_len))
+                + rename_split[1]
+                + "."
+                + vid_ext
+            )
+            new_file_path = os.path.join(file_path, new_file_name)
+            if arg_bool:
+                new_file_path = os.path.join(file_path, f"{new_file_name}")
+                os.rename(current_file_path, new_file_path)
+            else:
+                new_file_path = os.path.join(
+                    file_path, "Formatted", f"{new_file_name}"
+                )
+                shutil.copy2(current_file_path, new_file_path)
+            count += 1
+
+        spinner.stop()
 
 
 console.print("All done xd\nPress any key to exit...")
