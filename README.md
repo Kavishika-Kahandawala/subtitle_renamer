@@ -1,4 +1,4 @@
-![made-with-love-💜](https://github.com/Kavishika-Kahandawala/subtitle_renamer/assets/25774028/c51161d3-32f0-484e-ac56-1cd2e40a8af0)<p align="right"> <img src="https://img.shields.io/badge/Python-c0b9dd?style=for-the-badge&logo=python&logoColor=%234a4e69" alt="Python"> </p>
+<p align="right"> <img src="https://img.shields.io/badge/Python-c0b9dd?style=for-the-badge&logo=python&logoColor=%234a4e69" alt="Python"> </p>
 
 # Subtitle Renamer
 A python script I made to rename subtitles because I was bored to rename seperately one by one. And I watch a lot of dramas and movies these days :)
