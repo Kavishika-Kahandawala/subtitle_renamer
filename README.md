@@ -1,4 +1,4 @@
-<p align="right"> <img src="https://img.shields.io/badge/Python-c0b9dd?style=for-the-badge&logo=python&logoColor=%234a4e69" alt="Python"> </p>
+![made-with-love-💜](https://github.com/Kavishika-Kahandawala/subtitle_renamer/assets/25774028/c51161d3-32f0-484e-ac56-1cd2e40a8af0)<p align="right"> <img src="https://img.shields.io/badge/Python-c0b9dd?style=for-the-badge&logo=python&logoColor=%234a4e69" alt="Python"> </p>
 
 # Subtitle Renamer
 A python script I made to rename subtitles because I was bored to rename seperately one by one. And I watch a lot of dramas and movies these days :)
@@ -41,3 +41,8 @@ That's it Enjoy :)
 Although development on this application has finished, I am still interested in hearing your feedback and suggestions. If you have any ideas for how to improve the application, please feel free to open an issue.
 
 I appreciate your feedback! 🥳
+
+
+<p align="center">
+<a href="https://www.python.org/"><img src="https://github.com/Kavishika-Kahandawala/subtitle_renamer/assets/25774028/38a3212b-481d-4ca5-98be-614ca3959737"/></a>
+</p>
