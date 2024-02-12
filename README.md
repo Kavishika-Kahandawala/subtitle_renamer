@@ -3,16 +3,6 @@
 # Subtitle Renamer
 A python script I made to rename subtitles because I was bored to rename seperately one by one. And I watch a lot of dramas and movies these days :)
 
-## Made with
-
-<p align="center">
-<a href="https://www.python.org/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" height="80"/></a>
-</p>
-
-
-
-</table>
-
 ## Get started 
 
 ### Method 1 -  Use the executable version
